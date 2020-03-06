@@ -1,0 +1,30 @@
+[
+  {
+    "name": "McDonalds",
+    "type": "Restaurant",
+    "phone": "1234567890",
+    "email": "mcdon@lds.com",
+    "password": "ronniemcdonnie",
+    "closingTime": "12:00 AM",
+    "street": "123",
+    "city": "rerwe",
+    "state": "fl",
+    "zipCode": "33211",
+    "description": "Big Mac Yummy",
+    "image": ""
+  },
+  {
+    "name": "Wendys",
+    "type": "Restaurant",
+    "phone": "3423367890",
+    "email": "wen@dys.com",
+    "password": "wendywu",
+    "closingTime": "2:00 AM",
+    "street": "312312",
+    "city": "rerwefdsfr",
+    "state": "ga",
+    "zipCode": "11211",
+    "description": "Never frozen + frosties",
+    "image": ""
+  }
+]
