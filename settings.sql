@@ -1,6 +1,7 @@
 CREATE DATABASE forfoodsake;
 CREATE USER forfoodsakeuser WITH PASSWORD 'ekasdoofrof';
 GRANT ALL PRIVILEGES ON DATABASE forfoodsake TO forfoodsakeuser;
+\c forfoodsake
 CREATE TABLE vendors (
   id SERIAL PRIMARY KEY,
   vendor_name VARCHAR NOT NULL,
