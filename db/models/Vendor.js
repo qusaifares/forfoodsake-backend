@@ -1,43 +1,59 @@
 const Sequelize = require('sequelize');
 const db = require('../connection');
 
-const Vendor = db.define('vendor', {
-  name: {
-    type: Sequelize.STRING
+const Vendor = db.define(
+  'vendor',
+  {
+    vendor_name: {
+      type: Sequelize.STRING
+    },
+    vendor_type: {
+      type: Sequelize.STRING
+    },
+    phone: {
+      type: Sequelize.STRING
+    },
+    email: {
+      type: Sequelize.STRING
+    },
+    vendor_password: {
+      type: Sequelize.STRING
+    },
+    closing_time: {
+      type: Sequelize.STRING
+    },
+    street: {
+      type: Sequelize.STRING
+    },
+    city: {
+      type: Sequelize.STRING
+    },
+    address_state: {
+      type: Sequelize.STRING
+    },
+    zip_code: {
+      type: Sequelize.STRING
+    },
+    vendor_description: {
+      type: Sequelize.STRING
+    },
+    vendor_image: {
+      type: Sequelize.STRING
+    },
+    created_at: {
+      type: Sequelize.DATE
+    },
+    updated_at: {
+      type: Sequelize.DATE
+    },
+    deleted_at: {
+      type: Sequelize.DATE
+    }
   },
-  type: {
-    type: Sequelize.STRING
-  },
-  phone: {
-    type: Sequelize.STRING
-  },
-  email: {
-    type: Sequelize.STRING
-  },
-  password: {
-    type: Sequelize.STRING
-  },
-  closingTime: {
-    type: Sequelize.STRING
-  },
-  street: {
-    type: Sequelize.STRING
-  },
-  city: {
-    type: Sequelize.STRING
-  },
-  state: {
-    type: Sequelize.STRING
-  },
-  zipCode: {
-    type: Sequelize.STRING
-  },
-  description: {
-    type: Sequelize.STRING
-  },
-  image: {
-    type: Sequelize.STRING
+  {
+    paranoid: true,
+    underscored: true
   }
-});
+);
 
 module.exports = Vendor;

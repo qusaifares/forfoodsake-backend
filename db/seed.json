@@ -1,30 +1,30 @@
 [
   {
-    "name": "McDonalds",
-    "type": "Restaurant",
+    "vendor_name": "McDonalds",
+    "vendor_type": "Restaurant",
     "phone": "1234567890",
     "email": "mcdon@lds.com",
-    "password": "ronniemcdonnie",
-    "closingTime": "12:00 AM",
+    "vendor_password": "ronniemcdonnie",
+    "closing_time": "12:00 AM",
     "street": "123",
     "city": "rerwe",
-    "state": "fl",
-    "zipCode": "33211",
-    "description": "Big Mac Yummy",
-    "image": ""
+    "address_state": "fl",
+    "zip_code": "33211",
+    "vendor_description": "Big Mac Yummy",
+    "vendor_image": "asldkfna;sldkf"
   },
   {
-    "name": "Wendys",
-    "type": "Restaurant",
+    "vendor_name": "Wendys",
+    "vendor_type": "Restaurant",
     "phone": "3423367890",
     "email": "wen@dys.com",
-    "password": "wendywu",
-    "closingTime": "2:00 AM",
+    "vendor_password": "wendywu",
+    "closing_time": "2:00 AM",
     "street": "312312",
     "city": "rerwefdsfr",
-    "state": "ga",
-    "zipCode": "11211",
-    "description": "Never frozen + frosties",
-    "image": ""
+    "address_state": "ga",
+    "zip_code": "11211",
+    "vendor_description": "Never frozen + frosties",
+    "vendor_image": "sdlasndf;oasdnf;slkd"
   }
 ]

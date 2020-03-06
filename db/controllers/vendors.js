@@ -1,9 +1,10 @@
 const express = require('express');
 const router = express.Router();
-const sequelize = require('sequelize');
+const db = require('../connection');
+const Vendor = require('../models/Vendor')
 
 router.get('/', (req, res) => {
-  res.send('hello world');
+  Vendor.findAll().then(data => res.json(data))
 });
 
 module.exports = router;
