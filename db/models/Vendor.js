@@ -4,6 +4,10 @@ const db = require('../connection');
 const Vendor = db.define(
   'vendor',
   {
+    listing_id: {
+      type: DataTypes.UUID,
+      allowNum: false
+    },
     vendor_name: {
       type: Sequelize.STRING
     },

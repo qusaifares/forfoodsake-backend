@@ -6,6 +6,10 @@ const Vendor = require('./Vendor');
 const Listing = db.define(
     'listing',
     {
+    vendor_id: {
+      type: DataTypes.UUID,
+      allowNull: false
+    },
     listing_name: {
     type: Sequelize.STRING
     },
@@ -19,10 +23,10 @@ const Listing = db.define(
     //   type: Sequelize.STRING
     // },
     vegan: {
-      type: Sequelize.STRING
+      type: Sequelize.BOOLEAN
     },
     vegetarian: {
-      type: Sequelize.STRING
+      type: Sequelize.BOOLEAN
     },
     description: {
       type: Sequelize.STRING

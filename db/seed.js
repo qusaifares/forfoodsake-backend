@@ -1,20 +1,27 @@
 const sequelize = require('sequelize');
-const data = require('./seed.json');
+const vendors = require('./vendors.json');
 const Vendor = require('./models/Vendor');
 const Listing = require('./models/Listing');
+const listings = require('./listings.json');
 
 
+const eraseDatabaseOnSync = true;
 
-// Vendor.destroy({
-//   where: {},
-//   truncate: true
-// }).then(() => {
-//   data.forEach(vendor => {
-//     Vendor.create(vendor);
-//   });
-// });
-
-data.forEach(vendor => {
-    Vendor.create(vendor);
-    console.log(vendor)
+sequelize.sync({ force: eraseDatabaseOnSync }).then(async () => {
+  if (eraseDatabaseOnSync) {
+    seedData();
+  }
 });
+
+const seedData = () => {
+    vendors.forEach(vendor => {
+        Vendor.create(vendor);
+        console.log(vendor)
+    });
+    
+    listings.forEach(listing => {
+      Listing.create(listing);
+      console.log(listing);
+    });
+}
+
