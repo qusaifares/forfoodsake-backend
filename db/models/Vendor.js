@@ -5,7 +5,7 @@ const Vendor = db.define(
   'vendor',
   {
     listing_id: {
-      type: DataTypes.UUID,
+      type: Sequelize.UUID,
       allowNum: false
     },
     vendor_name: {

@@ -7,7 +7,7 @@ const Listing = db.define(
     'listing',
     {
     vendor_id: {
-      type: DataTypes.UUID,
+      type: Sequelize.UUID,
       allowNull: false
     },
     listing_name: {

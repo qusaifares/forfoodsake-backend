@@ -1,4 +1,4 @@
-const sequelize = require('sequelize');
+const sequelize = require('./connection');
 const vendors = require('./vendors.json');
 const Vendor = require('./models/Vendor');
 const Listing = require('./models/Listing');
