@@ -35,9 +35,10 @@ const Listing = db.define(
       type: Sequelize.STRING
     }
     }
+    
 )
 
-Vendor.hasMany(Listing)
-Listing.belongsTo(Vendor)
+// Vendor.hasMany(Listing)
+// Listing.belongsTo(Vendor)
 
 module.exports = Listing;
