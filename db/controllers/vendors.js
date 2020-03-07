@@ -3,23 +3,20 @@ const router = express.Router();
 const db = require('../connection');
 const Vendor = require('../models/Vendor');
 
-router.get('/', (req, res) => {
-  Vendor.findAll()
-    .then(data => res.json(data))
-    .catch(err => console.error(err));
+router.get('/', async (req, res) => {
+  const vendors = await Vendor.findAll();
+  return res.json(vendors);
 });
 
-router.get('/:id', (req, res) => {
-  Vendor.findByPk(req.params.id)
-    .then(data => res.json(data))
-    .catch(err => console.error(err));
+router.get('/:id', async (req, res) => {
+  const vendor = await Vendor.findByPk(req.params.id);
+  return res.json(vendor);
 });
 
-router.post('/new', (req, res) => {
+router.post('/new', async (req, res) => {
   // req.body should be the vendor object
-  Vendor.create(req.body)
-    .then(data => res.json(data))
-    .catch(err => console.error(err));
+  const newVendor = await Vendor.create(req.body);
+  return res.json(newVendor);
 });
 
 router.put('/:id/edit', async (req, res) => {
@@ -33,9 +30,7 @@ router.put('/:id/edit', async (req, res) => {
 router.delete('/:id/delete', async (req, res) => {
   const vendorToDelete = await Vendor.findByPk(req.params.id);
   await vendorToDelete.destroy();
-  res
-    .send('Deleted user with id ' + req.params.id)
-    .catch(err => console.error(err));
+  res.send('Deleted vendor with id ' + req.params.id);
 });
 
 module.exports = router;

@@ -1,20 +1,20 @@
 [
   {
-    "vendor_name": "McDonalds",
+    "vendor_name": "Dollys Donuts",
     "vendor_type": "Restaurant",
     "phone": "1234567890",
-    "email": "mcdon@lds.com",
+    "email": "dolly@do.nut",
     "vendor_password": "ronniemcdonnie",
     "closing_time": "12:00 AM",
     "street": "123",
     "city": "rerwe",
-    "address_state": "fl",
+    "address_state": "FL",
     "zip_code": "33211",
     "vendor_description": "Big Mac Yummy",
     "vendor_image": "asldkfna;sldkf"
   },
   {
-    "vendor_name": "Wendys",
+    "vendor_name": "Wendis",
     "vendor_type": "Restaurant",
     "phone": "3423367890",
     "email": "wen@dys.com",
@@ -22,7 +22,7 @@
     "closing_time": "2:00 AM",
     "street": "312312",
     "city": "rerwefdsfr",
-    "address_state": "ga",
+    "address_state": "GA",
     "zip_code": "11211",
     "vendor_description": "Never frozen + frosties",
     "vendor_image": "sdlasndf;oasdnf;slkd"
