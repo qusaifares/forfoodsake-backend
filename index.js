@@ -11,13 +11,11 @@ app.use(express.urlencoded({ extended: true }));
 const vendorsController = require('./db/controllers/vendors');
 
 const listingsController = require('./db/controllers/listings');
-app.use('/vendors', vendorsController);
-app.use('/listings', listingsController);
+app.use('/api/vendors', vendorsController);
+app.use('/api/listings', listingsController);
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => console.log(`Listening on port ${PORT}`));
-
-
 
 // const createVendorsWithListings = async () => {
 //   await models.Vendor.create(

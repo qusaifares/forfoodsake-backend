@@ -1,4 +1,5 @@
 'use strict';
+
 module.exports = (sequelize, DataTypes) => {
   const Listing = sequelize.define(
     'Listing',
@@ -9,21 +10,21 @@ module.exports = (sequelize, DataTypes) => {
       vegan: DataTypes.BOOLEAN,
       vegetarian: DataTypes.BOOLEAN,
       description: DataTypes.STRING,
-      image: DataTypes.STRING,
-      vendor: {
-        type: DataTypes.UUID,
-        allowNull: false
-      }
+      image: DataTypes.STRING
+      // vendor: {
+      //   type: DataTypes.UUID,
+      //   allowNull: false
+      // }
     },
     {
-      //timestamps: false
+      timestamps: false
     }
   );
   Listing.associate = function(models) {
     // associations can be defined here
-    Listing.hasOne(models.Vendor, {
+    Listing.belongsTo(models.Vendor, {
       onDelete: 'CASCADE',
-      foreignKey: 'vendor'
+      foreignKey: 'vendorId'
     });
   };
   return Listing;
