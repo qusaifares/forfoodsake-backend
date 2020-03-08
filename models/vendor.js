@@ -2,7 +2,7 @@
 
 module.exports = (sequelize, DataTypes) => {
   const Vendor = sequelize.define(
-    'vendor',
+    'Vendor',
     {
       vendor_name: DataTypes.STRING,
       vendor_type: DataTypes.STRING,
@@ -22,6 +22,8 @@ module.exports = (sequelize, DataTypes) => {
     }
   );
   Vendor.associate = function(models) {
+    console.log(`mindy:${models}`);
+    console.log('Qusai', models);
     Vendor.hasMany(models.Listing, {
       foreignKey: 'listings'
     });

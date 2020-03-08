@@ -23,8 +23,7 @@ module.exports = (sequelize, DataTypes) => {
   Listing.associate = function(models) {
     // associations can be defined here
     Listing.belongsTo(models.Vendor, {
-      onDelete: 'CASCADE',
-      foreignKey: 'vendorId'
+      foreignKey: 'vendor'
     });
   };
   return Listing;
