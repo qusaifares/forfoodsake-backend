@@ -1,7 +1,7 @@
 'use strict';
 module.exports = {
   up: (queryInterface, Sequelize) => {
-    return queryInterface.createTable('Vendors', {
+    return queryInterface.createTable('vendors', {
       id: {
         allowNull: false,
         autoIncrement: true,
@@ -44,15 +44,6 @@ module.exports = {
       vendor_image: {
         type: Sequelize.STRING
       },
-      created_at: {
-        type: Sequelize.DATE
-      },
-      updated_at: {
-        type: Sequelize.DATE
-      },
-      deleted_at: {
-        type: Sequelize.DATE
-      },
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE
@@ -64,6 +55,6 @@ module.exports = {
     });
   },
   down: (queryInterface, Sequelize) => {
-    return queryInterface.dropTable('Vendors');
+    return queryInterface.dropTable('vendors');
   }
 };

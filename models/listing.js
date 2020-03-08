@@ -6,15 +6,25 @@ module.exports = (sequelize, DataTypes) => {
       listing_name: DataTypes.STRING,
       price: DataTypes.FLOAT,
       quantity: DataTypes.INTEGER,
-      vegan: DataTypes.INTEGER,
-      vegetarian: DataTypes.INTEGER,
+      vegan: DataTypes.BOOLEAN,
+      vegetarian: DataTypes.BOOLEAN,
       description: DataTypes.STRING,
-      image: DataTypes.STRING
+      image: DataTypes.STRING,
+      vendor: {
+        type: DataTypes.UUID,
+        allowNull: false
+      }
     },
-    {}
+    {
+      //timestamps: false
+    }
   );
-  Listing.associate = models => {
-    Listing.hasOne(models.Vendor, { onDelete: 'CASCADE' });
+  Listing.associate = function(models) {
+    // associations can be defined here
+    Listing.hasOne(models.Vendor, {
+      onDelete: 'CASCADE',
+      foreignKey: 'vendor'
+    });
   };
   return Listing;
 };

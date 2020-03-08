@@ -1,6 +1,5 @@
 const express = require('express');
 const router = express.Router();
-const db = require('../../seeders/connection');
 const models = require('../../models');
 const Vendor = models.Vendor;
 
