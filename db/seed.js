@@ -1,9 +1,8 @@
 const sequelize = require('./connection');
 const vendors = require('./vendors.json');
-const Vendor = require('./models/Vendor');
-const Listing = require('./models/Listing');
+const Vendor = require('../models/Vendor');
+const Listing = require('../models/Listing');
 const listings = require('./listings.json');
-
 
 // const eraseDatabaseOnSync = true;
 
@@ -18,13 +17,12 @@ const listings = require('./listings.json');
 //         Vendor.create(vendor);
 //         console.log(vendor)
 //     });
-    
+
 //     listings.forEach(listing => {
 //       Listing.create(listing);
 //       console.log(listing);
 //     });
 // }
-
 
 // const createVendorsWithListings = async () => {
 //     await Vendor.create(

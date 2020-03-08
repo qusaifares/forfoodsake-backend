@@ -1,11 +1,16 @@
 const express = require('express');
 const router = express.Router();
-const db = require('../connection');
-const Vendor = require('../models/Vendor');
+const db = require('../../seeders/connection');
+const models = require('../../models');
+const Vendor = models.Vendor;
 
 router.get('/', async (req, res) => {
-  const vendors = await Vendor.findAll();
-  return res.json(vendors);
+  try {
+    const vendors = await Vendor.findAll();
+    res.json(vendors);
+  } catch (err) {
+    console.error(err);
+  }
 });
 
 router.get('/:id', async (req, res) => {

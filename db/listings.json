@@ -1,20 +1,20 @@
 [
-    {
-      "listing_name": "fries",
-      "price": 1.59,
-      "quanity": 20,
-      "vegan": true,
-      "vegetarian": true,
-      "description": "satisfy your salty craving & clog your arteries with our fresh-ish sea salt fries",
-      "image": "lskdfnasldfnsldnlk"
-    },
-    {
-      "listing_name": "chocolate milkshake",
-      "price": 4.59,
-      "quanity": 2,
-      "vegan": false,
-      "vegetarian": false,
-      "description": "we have a super secret ingredient that will enlighten your brain. Disclaimer- we require you to sign a release waiver.",
-      "image": "lskdfnasldfnsldsdfasdfnlk"
-    }
+  {
+    "listing_name": "fries",
+    "price": 1.59,
+    "quanity": 20,
+    "vegan": 1,
+    "vegetarian": 1,
+    "description": "satisfy your salty craving & clog your arteries with our fresh-ish sea salt fries",
+    "image": "lskdfnasldfnsldnlk"
+  },
+  {
+    "listing_name": "chocolate milkshake",
+    "price": 4.59,
+    "quanity": 2,
+    "vegan": 0,
+    "vegetarian": 0,
+    "description": "we have a super secret ingredient that will enlighten your brain. Disclaimer- we require you to sign a release waiver.",
+    "image": "lskdfnasldfnsldsdfasdfnlk"
+  }
 ]
