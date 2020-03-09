@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "description": "",
   "scripts": {
-    "start": "node index.js"
+    "start": "node index.js",
+    "dev": "nodemon"
   },
   "dependencies": {
     "chai": "^4.2.0",
@@ -33,6 +34,3 @@
   },
   "homepage": "https://forfoodsake-backend.herokuapp.com/api/vendors"
 }
-
-
-

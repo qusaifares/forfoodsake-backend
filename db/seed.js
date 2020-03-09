@@ -7,10 +7,9 @@ const vendors = require('./vendors.json');
 const listings = require('./listings.json');
 
 // Seeding
-Vendor.create(vendors[0]).then(vendor => {
-  vendor.createListing(listings[0]);
-});
 
-Vendor.create(vendors[1]).then(vendor => {
-  vendor.createListing(listings[1]);
-});
+for (let i = 0; i < vendors.length; i++) {
+  Vendor.create(vendors[i]).then(vendor => {
+    vendor.createListing(listings[Math.min(listings.length - 1, i)]);
+  });
+}

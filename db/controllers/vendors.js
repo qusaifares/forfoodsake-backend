@@ -21,8 +21,44 @@ router.get('/:id', async (req, res) => {
 
 router.post('/new', async (req, res) => {
   // req.body should be the vendor object
-  const newVendor = await Vendor.create(req.body);
-  return res.json(newVendor);
+  console.log(req.body);
+  let vendorToCreate = {
+    name: req.body.name,
+    type: 'Restaurant',
+    phone: '1234567890',
+    email: 'dolly@do.nut',
+    password: req.body.password,
+    closing_time: '12:00 AM',
+    street: '123',
+    city: 'rerwe',
+    state: 'FL',
+    zip_code: '33211',
+    description: 'Big Mac Yummy',
+    image: 'asldkfna;sldkf'
+  };
+  const newVendor = await Vendor.create(vendorToCreate);
+  res.json(newVendor);
+});
+
+router.post('/login', async (req, res) => {
+  // req.body should be {name, password}
+  let vendorList = await Vendor.findAll({
+    where: {
+      name: req.body.name
+    }
+  });
+  if (vendorList.length === 0) {
+    // if query finds nothing
+    res.send('User not found');
+  } else {
+    vendor = vendorList[0];
+    if (vendor.password === req.body.password) {
+      res.json(vendor);
+    } else {
+      // if password doesn't match
+      res.status(500).send('Incorrect password');
+    }
+  }
 });
 
 router.put('/:id/edit', async (req, res) => {
