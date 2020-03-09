@@ -16,9 +16,6 @@
     "operatorsAliases": false
   },
   "production": {
-    "use_env_variable": "DB_URL",
-    "host": "127.0.0.1",
-    "dialect": "postgres",
-    "operatorsAliases": false
+    "use_env_variable": "DB_URL"
   }
 }
