@@ -8,10 +8,10 @@ module.exports = {
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      vendor_name: {
+      name: {
         type: Sequelize.STRING
       },
-      vendor_type: {
+      type: {
         type: Sequelize.STRING
       },
       phone: {
@@ -20,7 +20,7 @@ module.exports = {
       email: {
         type: Sequelize.STRING
       },
-      vendor_password: {
+      password: {
         type: Sequelize.STRING
       },
       closing_time: {
@@ -32,16 +32,16 @@ module.exports = {
       city: {
         type: Sequelize.STRING
       },
-      address_state: {
+      state: {
         type: Sequelize.STRING
       },
       zip_code: {
         type: Sequelize.STRING
       },
-      vendor_description: {
+      description: {
         type: Sequelize.STRING
       },
-      vendor_image: {
+      image: {
         type: Sequelize.STRING
       },
       createdAt: {

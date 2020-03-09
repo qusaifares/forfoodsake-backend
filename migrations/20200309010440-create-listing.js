@@ -8,7 +8,7 @@ module.exports = {
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      listing_name: {
+      name: {
         type: Sequelize.STRING
       },
       price: {
@@ -36,6 +36,9 @@ module.exports = {
       updatedAt: {
         allowNull: false,
         type: Sequelize.DATE
+      },
+      VendorId: {
+        type: Sequelize.INTEGER
       }
     });
   },
