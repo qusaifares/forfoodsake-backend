@@ -2,11 +2,13 @@ const express = require('express');
 const router = express.Router();
 const models = require('../../models');
 const Vendor = models.Vendor;
+const Listing = models.Listing;
 
 router.get('/', async (req, res) => {
   try {
-    const vendors = await Vendor.findAll();
-    res.json(vendors);
+    const vendors = await Vendor.findAll({
+      include: [Listing]
+    }).then(res => res.json(vendors));
   } catch (err) {
     console.error(err);
   }

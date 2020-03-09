@@ -11,9 +11,7 @@
     "address_state": "FL",
     "zip_code": "33211",
     "vendor_description": "Big Mac Yummy",
-    "vendor_image": "asldkfna;sldkf",
-    "createdAt": "2017-07-04",
-    "updatedAt": "2017-07-05"
+    "vendor_image": "asldkfna;sldkf"
   },
   {
     "vendor_name": "Wendis",
@@ -27,8 +25,6 @@
     "address_state": "GA",
     "zip_code": "11211",
     "vendor_description": "Never frozen + frosties",
-    "vendor_image": "sdlasndf;oasdnf;slkd",
-    "createdAt": "2017-07-04",
-    "updatedAt": "2017-07-05"
+    "vendor_image": "sdlasndf;oasdnf;slkd"
   }
 ]

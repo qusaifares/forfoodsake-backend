@@ -11,10 +11,6 @@ module.exports = (sequelize, DataTypes) => {
       vegetarian: DataTypes.BOOLEAN,
       description: DataTypes.STRING,
       image: DataTypes.STRING
-      // vendor: {
-      //   type: DataTypes.UUID,
-      //   allowNull: false
-      // }
     },
     {
       timestamps: false
@@ -22,9 +18,7 @@ module.exports = (sequelize, DataTypes) => {
   );
   Listing.associate = function(models) {
     // associations can be defined here
-    Listing.belongsTo(models.Vendor, {
-      foreignKey: 'vendor'
-    });
+    Listing.belongsTo(models.Vendor, { foreignKey: 'vendorId' });
   };
   return Listing;
 };

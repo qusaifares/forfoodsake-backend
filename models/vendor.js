@@ -22,11 +22,8 @@ module.exports = (sequelize, DataTypes) => {
     }
   );
   Vendor.associate = function(models) {
-    console.log(`mindy:${models}`);
     console.log('Qusai', models);
-    Vendor.hasMany(models.Listing, {
-      foreignKey: 'listings'
-    });
+    Vendor.hasMany(models.Listing);
     // associations can be defined here
   };
   return Vendor;

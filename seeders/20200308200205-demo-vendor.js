@@ -3,7 +3,7 @@ const vendors = require('../db/vendors.json');
 
 module.exports = {
   up: (queryInterface, Sequelize) => {
-    return queryInterface.bulkInsert('Vendors', vendors);
+    return queryInterface.bulkInsert('vendors', vendors);
   },
 
   down: (queryInterface, Sequelize) => {
