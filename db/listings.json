@@ -1,20 +1,24 @@
 [
-    {
-      "listing_name": "fries",
-      "price": 1.59,
-      "quanity": 20,
-      "vegan": true,
-      "vegetarian": true,
-      "description": "satisfy your salty craving & clog your arteries with our fresh-ish sea salt fries",
-      "image": "lskdfnasldfnsldnlk"
-    },
-    {
-      "listing_name": "chocolate milkshake",
-      "price": 4.59,
-      "quanity": 2,
-      "vegan": false,
-      "vegetarian": false,
-      "description": "we have a super secret ingredient that will enlighten your brain. Disclaimer- we require you to sign a release waiver.",
-      "image": "lskdfnasldfnsldsdfasdfnlk"
-    }
+  {
+    "name": "Glazed salty donut",
+    "price": 1.59,
+    "quantity": 20,
+    "vegan": false,
+    "vegetarian": true,
+    "description": "satisfy your salty craving & clog your arteries with our fresh-ish sea salt donuts",
+    "image": "lskdfnasldfnsldnlk",
+    "createdAt": "2017-07-04",
+    "updatedAt": "2017-07-04"
+  },
+  {
+    "name": "Cheeseburger",
+    "price": 4.59,
+    "quantity": 2,
+    "vegan": false,
+    "vegetarian": false,
+    "description": "we have a super secret ingredient that will enlighten your brain. Disclaimer- we require you to sign a release waiver.",
+    "image": "lskdfnasldfnsldsdfasdfnlk",
+    "createdAt": "2017-07-04",
+    "updatedAt": "2017-07-04"
+  }
 ]

@@ -1,11 +1,17 @@
 const express = require('express');
 const router = express.Router();
-const db = require('../connection');
-const Vendor = require('../models/Vendor');
+const Vendor = require('../../models').Vendor;
+const Listing = require('../../models').Listing;
 
 router.get('/', async (req, res) => {
-  const vendors = await Vendor.findAll();
-  return res.json(vendors);
+  try {
+    const vendors = await Vendor.findAll({
+      include: [Listing]
+    });
+    res.json(vendors);
+  } catch (err) {
+    console.error(err);
+  }
 });
 
 router.get('/:id', async (req, res) => {
@@ -20,7 +26,7 @@ router.post('/new', async (req, res) => {
 });
 
 router.put('/:id/edit', async (req, res) => {
-  // req.body should look like this: { field: 'whatever field is being edited e.g.(email)', value: 'new_email@gmail.com' }
+  // req.body should look like this: { field: field being edited e.g.'email', value: 'new_email@gmail.com' }
   const vendorToUpdate = await Vendor.findByPk(req.params.id);
   vendorToUpdate[req.body.field] = req.body.value;
   vendorToUpdate.save();
