@@ -2,7 +2,9 @@
   "name": "forfoodsake-backend",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
   "dependencies": {
     "chai": "^4.2.0",
     "cors": "^2.8.5",
@@ -15,12 +17,11 @@
     "sequelize-cli": "^5.5.1",
     "supertest": "^4.0.2"
   },
-  "devDependencies": {},
-  "scripts": {
-    "server": "node index.js",
-    "start": "node index.js",
-    "dev": "nodemon"
+  "engines": {
+    "node": "*",
+    "npm": "*"
   },
+  "devDependencies": {},
   "repository": {
     "type": "git",
     "url": "git+https://github.com/qusaifares/forfoodsake-backend.git"
