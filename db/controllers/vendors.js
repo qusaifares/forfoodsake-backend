@@ -15,7 +15,9 @@ router.get('/', async (req, res) => {
 });
 
 router.get('/:id', async (req, res) => {
-  const vendor = await Vendor.findByPk(req.params.id);
+  const vendor = await Vendor.findByPk(req.params.id,{
+    include:[Listing]
+  });
   return res.json(vendor);
 });
 
