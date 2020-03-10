@@ -49,14 +49,17 @@ router.post('/login', async (req, res) => {
   });
   if (vendorList.length === 0) {
     // if query finds nothing
-    res.send('User not found');
+    res.statusMessage = 'User not found';
+    res.status(400).end();
   } else {
     vendor = vendorList[0];
     if (vendor.password === req.body.password) {
       res.json(vendor);
     } else {
       // if password doesn't match
-      res.status(500).send('Incorrect password');
+      console.log('bad password');
+      res.statusMessage = 'Current password does not match';
+      res.status(403).end();
     }
   }
 });
@@ -72,7 +75,8 @@ router.put('/:id/edit', async (req, res) => {
 router.delete('/:id/delete', async (req, res) => {
   const vendorToDelete = await Vendor.findByPk(req.params.id);
   await vendorToDelete.destroy();
-  res.send('Deleted vendor with id ' + req.params.id);
+  res.statusMessage = 'Deleted vendor with id ' + req.params.id;
+  res.status(200).end();
 });
 
 module.exports = router;
