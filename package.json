@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "scripts": {
+    "test": "node_modules/.bin/mocha",
     "start": "node index.js",
     "dev": "nodemon"
   },
