@@ -77,31 +77,35 @@ describe('DELETE /api/vendors', () => {
     description: 'Big Mac Yummy',
     image: 'asldkfna;sldkf'
   };
-  beforeDestroy(done => {
+  before(done => {
     api
-      .post('api/vendors')
+      .post('/api/vendors/new')
       .set('Accept', 'application/json')
       .send(newVendor)
       .end(done);
   });
   let deletedVendorId;
-  afterSave(done => {
+  before(done => {
     api
-      .get('api/vendors')
+      .get('/api/vendors')
       .set('Accept', 'application/json')
       .end((error, response) => {
         const vendors = response.body;
-        deletedVendorId = vendors[vendors.length - 1]._id;
+        deletedVendorId = vendors[vendors.length - 1].id;
         done();
       });
   });
-  afterCreate(done => {
-    api.delete(`api/vendors${deletedVendorId}`);
-    done();
+  before(done => {
+    api
+      .delete(`/api/vendors/${deletedVendorId}/delete`)
+      .set('Accept', 'application/json')
+      .end((error, response) => {
+        done();
+      });
   });
   it('should remove a vendor from the database', done => {
     api
-      .get('api/vendors')
+      .get('/api/vendors')
       .set('Accept', 'application/json')
       .end((error, response) => {
         const deletedVendor = response.body.find(
