@@ -62,6 +62,38 @@ describe('POST /api/vendors/new', (req, res) => {
   });
 });
 
+//testing the put route
+describe('PUT /api/vendors/:id/edit', (res, req) => {
+  const vendor = {
+    name: 'Bob Test restaurant',
+    city: 'New City'
+  };
+  let updatedVendor;
+  let vendorId;
+  before(done => {
+    api
+      .get('/api/vendors')
+      .set('Accept', 'application/json')
+      .end((error, response) => {
+        const info = response.body;
+        vendorId = info[info.length - 1].id;
+        done();
+      });
+  });
+
+  it('Should update a vendor using its id', done => {
+    api
+      .put(`/api/vendors/${vendorId}/edit`)
+      .set('Accept', 'application/json')
+      .send(vendor)
+      .end((error, response) => {
+        updatedVendor = response.body;
+        expect(updatedVendor.city).to.equal('New City');
+        done();
+      });
+  });
+});
+
 describe('DELETE /api/vendors', () => {
   const newVendor = {
     name: 'Bob Test restaurant',
