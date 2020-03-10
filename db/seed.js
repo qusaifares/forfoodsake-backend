@@ -9,7 +9,7 @@ const listings = require('./listings.json');
 // Seeding
 
 for (let i = 0; i < vendors.length; i++) {
-  Vendor.create(vendors[i]).then(vendor => {
-    vendor.createListing(listings[Math.min(listings.length - 1, i)]);
-  });
+    Vendor.create(vendors[i]).then(vendor => {
+        vendor.createListing(listings[Math.min(listings.length - 1, i)]);
+    });
 }
