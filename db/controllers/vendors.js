@@ -23,22 +23,7 @@ router.get('/:id', async (req, res) => {
 
 router.post('/new', async (req, res) => {
     // req.body should be the vendor object
-    console.log(req.body);
-    let vendorToCreate = {
-        name: 'Placeholder Name',
-        type: 'Restaurant',
-        phone: '1234567890',
-        email: req.body.email,
-        password: req.body.password,
-        closing_time: '12:00 AM',
-        street: '123',
-        city: 'rerwe',
-        state: 'FL',
-        zip_code: '33211',
-        description: 'Big Mac Yummy',
-        image: 'asldkfna;sldkf'
-    };
-    const newVendor = await Vendor.create(vendorToCreate);
+    const newVendor = await Vendor.create(req.body);
     res.json(newVendor);
 });
 
