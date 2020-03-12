@@ -8,11 +8,8 @@
     "dev": "nodemon"
   },
   "dependencies": {
-<<<<<<< HEAD
-    "bcrypt": "^4.0.1",
-=======
     "aws-sdk": "^2.638.0",
->>>>>>> Added aws functionality
+    "bcrypt": "^4.0.1",
     "chai": "^4.2.0",
     "cors": "^2.8.5",
     "express": "^4.17.1",
