@@ -2,6 +2,7 @@ const express = require('express');
 const router = express.Router();
 const Vendor = require('../../models').Vendor;
 const Listing = require('../../models').Listing;
+const bcrypt = require('bcrypt');
 
 router.get('/', async (req, res) => {
     try {
@@ -22,14 +23,27 @@ router.get('/:id', async (req, res) => {
 });
 
 router.post('/new', async (req, res) => {
+    // new vendor info
+    let vendorToCreate = req.body;
+    try {
+        // hashing password
+        const hashedPassword = await bcrypt.hash(req.body.password, 10);
+        // replacing password with hashed password
+        vendorToCreate.password = hashedPassword;
+
+        const newVendor = await Vendor.create(vendorToCreate);
+        res.json(newVendor);
+    } catch {
+        res.status(500).send();
+    }
+
     // req.body should be the vendor object
-    const newVendor = await Vendor.create(req.body);
-    res.json(newVendor);
 });
 
 router.post('/login', async (req, res) => {
     // req.body should be {email, password}
     let vendorList = await Vendor.findAll({
+        include: [Listing],
         where: {
             email: req.body.email
         }
@@ -39,14 +53,18 @@ router.post('/login', async (req, res) => {
         res.statusMessage = 'User not found';
         res.status(400).end();
     } else {
-        vendor = vendorList[0];
-        if (vendor.password === req.body.password) {
-            res.json(vendor);
-        } else {
-            // if password doesn't match
-            console.log('bad password');
-            res.statusMessage = 'Current password does not match';
-            res.status(403).end();
+        try {
+            vendor = vendorList[0];
+            if (await bcrypt.compare(req.body.password, vendor.password)) {
+                res.json(vendor);
+            } else {
+                // if password doesn't match
+                console.log('bad password');
+                res.statusMessage = 'Current password does not match';
+                res.status(403).end();
+            }
+        } catch {
+            res.status(500).send('Forbidden');
         }
     }
 });
