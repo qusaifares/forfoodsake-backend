@@ -1,8 +1,5 @@
 # ForFoodSake Backend
 
-// https://thawing-bastion-78065.herokuapp.com/
-// https://git.heroku.com/thawing-bastion-78065.git
-
 <img width="746" src="" />
 
 # An app to become more sustainable
@@ -10,6 +7,12 @@
 ## API Overview
 
 ### Technologies used
+-  Express
+-  PostgresQL
+-  Sequelize
+-  Google Maps API
+-  AWS
+-  Mocha, Chia, Supertest 
 
 **Database**
 
@@ -53,7 +56,7 @@
 
 -
 
-## Contribution Guidelines
+## Contribution Guidelines & Installation Directions
 
 -   Fork and clone this repo
 
