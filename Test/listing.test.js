@@ -80,3 +80,84 @@ describe('POST /api/listings/:vendorId/new/', (req, res) => {
             });
     });
 });
+
+//PUT - edit a listing/vendorId using its id
+describe('PUT /api/listings/:id/edit/', (res, req) => {
+    const listingToUpdate = {
+        value: 'Patacones',
+        field: 'name'
+    };
+    let updatedListing;
+    let listing;
+    before(done => {
+        api.get('/api/listings')
+            .set('Accept', 'application/json')
+            .end((error, response) => {
+                const info = response.body;
+                listing = info[0];
+                done();
+            });
+    });
+
+    it('Should update a listing using its id', done => {
+        api.put(`/api/listings/${listing.id}/edit`)
+            .set('Accept', 'application/json')
+            .send(listingToUpdate)
+            .end((error, response) => {
+                updatedListing = response.body;
+                expect(updatedListing.name).to.equal('Patacones');
+                done();
+            });
+    });
+});
+
+describe('DELETE /api/listings/:id', () => {
+    let vendorId;
+    let listingToDelete;
+    const newListing = {
+        name: 'Mofongo',
+        price: 10.59,
+        quantity: 8,
+        vegan: false,
+        vegetarian: false,
+        description: 'Latin American heart attack in a plate',
+        image: 'wrgaergearhsaethae'
+    };
+    before(done => {
+        api.get('/api/vendors')
+            .set('Accept', 'application/json')
+            .end((error, response) => {
+                const vendors = response.body;
+                vendorId = vendors[vendors.length - 1].id;
+                done();
+            });
+    });
+    before(done => {
+        api.post(`/api/listings/${vendorId}/new`)
+            .set('Accept', 'application/json')
+            .send(newListing)
+            .end((error, response) => {
+                listingToDelete = response.body.id;
+                done();
+            });
+    });
+
+    before(done => {
+        api.delete(`/api/listings/${listingToDelete}/delete`)
+            .set('Accept', 'application/json')
+            .end((error, response) => {
+                done();
+            });
+    });
+    it('should remove a listing from the database', done => {
+        api.get('/api/listings/')
+            .set('Accept', 'application/json')
+            .end((error, response) => {
+                const deletedListing = response.body.find(
+                    listing => listing.id === listingToDelete
+                );
+                expect(deletedListing).to.equal(undefined);
+                done();
+            });
+    });
+});
