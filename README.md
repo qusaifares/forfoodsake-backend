@@ -3,6 +3,22 @@
 // https://thawing-bastion-78065.herokuapp.com/
 // https://git.heroku.com/thawing-bastion-78065.git
 
+## Table of Contents
+
+-   [Who is ForFoodSake for?](https://github.com/mmarmol88/forfoodsake-frontend#who-is-ForFoodSake-for)
+-   [Wireframes](https://github.com/mmarmol88/forfoodsake-frontend#wireframes)
+-   [Mockups](https://github.com/mmarmol88/forfoodsake-frontend#mockups)
+-   [User Stories](https://github.com/mmarmol88/forfoodsake-frontend#user-stories)
+-   [User Data Flow Chart](https://github.com/mmarmol88/forfoodsake-frontend#user-data-flow-chart)
+-   [Workflow & Responsiblities](https://github.com/mmarmol88/forfoodsake-frontend#workflow-&-responsibilities)
+-   [Component Hierarchy](https://github.com/mmarmol88/forfoodsake-frontend#component-hierarchy)
+-   [App Features](https://github.com/mmarmol88/forfoodsake-frontend#app-features)
+-   [Technologies Used](https://github.com/mmarmol88/forfoodsake-frontend#technologies-used)
+-   [Code Sample](https://github.com/mmarmol88/forfoodsake-frontend#code-sample)
+-   [Contribution & Installation Instructions](https://github.com/mmarmol88/forfoodsake-frontend#contribution-&-installation-instructions)
+-   [Attributions](https://github.com/mmarmol88/forfoodsake-frontend#attributions)
+-   [About the Developers](https://github.com/mmarmol88/forfoodsake-frontend#about-the-developers)
+
 <img width="746" src="" />
 
 # An app to become more sustainable
