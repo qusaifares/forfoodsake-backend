@@ -1,6 +1,6 @@
 const express = require('express');
 const app = express();
-// import models, { sequelize } from './models';
+
 
 const cors = require('cors');
 

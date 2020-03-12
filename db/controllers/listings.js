@@ -3,6 +3,10 @@ const router = express.Router();
 const sequelize = require('sequelize');
 const Listing = require('../../models').Listing;
 const Vendor = require('../../models').Vendor;
+const upload = require('./aws');
+
+//Important to specify that you are a uploading a single 'image'
+const singleUpload = upload.single('image');
 
 router.get('/', async (req, res) => {
   const listings = await Listing.findAll();
@@ -15,6 +19,19 @@ router.get('/:id', async (req, res) => {
 });
 
 router.post('/:vendorId/new/', async (req, res) => {
+  singleUpload(
+    (req, res) =>
+      function(err) {
+        if (req.file === undefined) {
+          console.log('Error: No file selected');
+          res.json('Error: no file selected');
+        } else {
+          const imageURL = req.file.location;
+          return imageURL;
+        }
+      }
+  );
+  //Pass the imageURL to the newly created vendor
   // req.body should be listing minus VendorId/timestamps
   const timestamp = Date.now();
   const vendor = await Vendor.findByPk(req.params.vendorId);
@@ -23,6 +40,7 @@ router.post('/:vendorId/new/', async (req, res) => {
     createdAt: timestamp,
     updatedAt: timestamp
   });
+  listing.image = imageURL;
   res.json(listing);
 });
 

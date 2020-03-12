@@ -8,17 +8,24 @@
     "dev": "nodemon"
   },
   "dependencies": {
+<<<<<<< HEAD
     "bcrypt": "^4.0.1",
+=======
+    "aws-sdk": "^2.638.0",
+>>>>>>> Added aws functionality
     "chai": "^4.2.0",
     "cors": "^2.8.5",
     "express": "^4.17.1",
     "mocha": "^7.1.0",
+    "multer": "^1.4.2",
+    "multer-s3": "^2.9.0",
     "nodemon": "^2.0.2",
     "pg": "^7.18.2",
     "pg-hstore": "^2.3.3",
     "sequelize": "^5.21.5",
     "sequelize-cli": "^5.5.1",
-    "supertest": "^4.0.2"
+    "supertest": "^4.0.2",
+    "uuid": "^7.0.2"
   },
   "engines": {
     "node": "*",
