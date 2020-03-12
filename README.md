@@ -5,27 +5,23 @@
 
 ## Table of Contents
 
--   [Who is ForFoodSake for?](https://github.com/mmarmol88/forfoodsake-frontend#who-is-ForFoodSake-for)
--   [Wireframes](https://github.com/mmarmol88/forfoodsake-frontend#wireframes)
--   [Mockups](https://github.com/mmarmol88/forfoodsake-frontend#mockups)
--   [User Stories](https://github.com/mmarmol88/forfoodsake-frontend#user-stories)
--   [User Data Flow Chart](https://github.com/mmarmol88/forfoodsake-frontend#user-data-flow-chart)
--   [Workflow & Responsiblities](https://github.com/mmarmol88/forfoodsake-frontend#workflow-&-responsibilities)
--   [Component Hierarchy](https://github.com/mmarmol88/forfoodsake-frontend#component-hierarchy)
--   [App Features](https://github.com/mmarmol88/forfoodsake-frontend#app-features)
--   [Technologies Used](https://github.com/mmarmol88/forfoodsake-frontend#technologies-used)
--   [Code Sample](https://github.com/mmarmol88/forfoodsake-frontend#code-sample)
--   [Contribution & Installation Instructions](https://github.com/mmarmol88/forfoodsake-frontend#contribution-&-installation-instructions)
--   [Attributions](https://github.com/mmarmol88/forfoodsake-frontend#attributions)
--   [About the Developers](https://github.com/mmarmol88/forfoodsake-frontend#about-the-developers)
+-   [API Overview?](https://github.com/qusaifares/forfoodsake-backend#api-overview)
+-   [Tehcnologies Used](https://github.com/qusaifares/forfoodsake-backend#technologies-used)
+-   [Response Requests Cycle Diagram](https://github.com/qusaifares/forfoodsake-backend#response-request-cycle-diagram)
+-   [Database Model](https://github.com/qusaifares/forfoodsake-backend#database-model)
+-   [Connection](https://github.com/qusaifares/forfoodsake-backend#connection)
+-   [Testing](https://github.com/qusai/forfoodsake-backend#testing)
 
 <img width="746" src="" />
-
-# An app to become more sustainable
 
 ## API Overview
 
 ### Technologies used
+
+-   [Node.js](https://nodejs.org/en/)
+-   [Nodemon](https://nodemon.io/)
+-   [Express](https://expressjs.com/)
+-   [JSX](https://reactjs.org/docs/introducing-jsx.html)
 
 ### Response Request Cycle Diagram
 
@@ -35,21 +31,11 @@
 
 <img width="746" src="https://user-images.githubusercontent.com/55994508/76559992-2f3e1780-646e-11ea-863d-a3d540f01627.png" />
 
-**Database**
-
--   [Node.js](https://nodejs.org/en/)
--   [Nodemon](https://nodemon.io/)
-
-**Functionality**
-
--   [Express](https://expressjs.com/)
--   [JSX](https://reactjs.org/docs/introducing-jsx.html)
-
-**Connection between back and front ends**
+## Connection
 
 -   [Cross-Origin Resourse Sharing (CORS)](https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS)
 
-**Testing**
+## Testing
 
 -   [Chai](https://www.chaijs.com/)
 -   [Mocha](https://mochajs.org/)
