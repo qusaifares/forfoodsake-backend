@@ -41,17 +41,18 @@ The idea for the project came about through a mixture of activism and sustainabi
 
 ## API Overview
 
-The API contains two models- Vendor and Listing. The vendor model is made up of all the information for said vendor- name, email, passsword, street address, type of vendor (restaurant, farm, or market), and all the ajoining listings for that vendor. The listing model contains all the information for any given listing- item name, quantitiy, price, dietary classification (vegan? vegitarian?), and vendorId (the adjoining vendor information of the vendor that the listing belongs to). So, to speak in programming terms, the Vendor model _**has many**_ listings, while the Listing model _**belongs to**_ Vendor. Through our API, our users can easily traverse through different vendors and all of their listings to choose which food they would like to purchase.
+The API contains two models- Vendor and Listing. The Vendor model is made up of all the information for said Vendor- name, email, password, street address, type of vendor (restaurant, farm, or market), and all the adjoining listings for that vendor. The Listing model contains all the information for any given listing- item name, quantity, price, dietary classification (vegan? vegetarian?), and vendorId (the adjoining vendor information of the vendor that the listing belongs to). So, to speak in programming terms, the Vendor model _**has many**_ listings, while the Listing model _**belongs to**_ Vendor. Through our API, our users can easily traverse through different vendors and all of their listings to choose which food they would like to purchase.
 
 ## Technologies used
 
 -   [Node.js](https://nodejs.org/en/)
 -   [Nodemon](https://nodemon.io/)
 -   [Express](https://expressjs.com/)
--   [JSX](https://reactjs.org/docs/introducing-jsx.html)
 -   [Sequelize](https://sequelize.org/master/)
 -   [Postman](https://www.postman.com/)
--   [Cross-Origin Resourse Sharing (CORS)](https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS)
+-   [Cross-Origin Resource Sharing (CORS)](https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS)
+-   [Bcrypt]()
+-   [PostreSQL]()
 
 ## Response Request Cycle Diagram
 
@@ -76,7 +77,7 @@ The API contains two models- Vendor and Listing. The vendor model is made up of 
     type: 'Restaurant',
     phone: '1234567890',
     email: 'dolly@do.nut',
-    password: 'ronniemcdonnie',
+    password: '$2b$10$uHjWS3xW/R1D7llH43dt9OQNAkgWpFBwdkiMfl6/BMIaOEcBkjs2G',
     closing_time: '12:00 AM',
     street: '123',
     city: 'New York City',
@@ -122,7 +123,7 @@ router.get('/', async (req, res) => {
 });
 ```
 
-Example of a POST request to create a new vendor:
+Example of a POST request to create a new vendor with password encryption:
 
 ```javascript
 router.post('/new', async (req, res) => {
@@ -165,7 +166,7 @@ router.put('/:id/edit', async (req, res) => {
 
 -   [ ] Image upload with Amazon Web Service(AWS)
 
-## Contribution Guidelines
+## Installation & Contributing Instructions
 
 [Click Here](https://github.com/rixiobarrios/first-contributions)
 
