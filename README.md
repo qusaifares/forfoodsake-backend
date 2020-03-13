@@ -1,8 +1,5 @@
 # ForFoodSake Backend
 
-// https://thawing-bastion-78065.herokuapp.com/
-// https://git.heroku.com/thawing-bastion-78065.git
-
 ## Table of Contents
 
 -   [API Overview?](https://github.com/qusaifares/forfoodsake-backend#api-overview)
@@ -43,9 +40,15 @@
 
 ## Profile Data Example
 
+`vendor profile code here`
+
 ### JSON Data
 
+`code here`
+
 ## Code Samples
+
+`backend code here`
 
 ### POST and PUT Requests
 
@@ -65,7 +68,7 @@
 
 ## Contribution Guidelines
 
--   Fork and clone this repo
+[Click Here](https://github.com/rixiobarrios/first-contributions)
 
 ## Sources
 
@@ -73,13 +76,8 @@ Database Media:
 
 -   []()
 
-Planning:
+## Attributes
 
--   [Miro](https://miro.com/)
--   [Trello](http://www.trello.com)
+**Acddtional Dcumentation can be found in the Frontend Repository**
 
-## Acknowledgements
-
-Honorable mentions:
-
-Special thanks to:
+[Click Here](https://github.com/mmarmol88/forfoodsake-frontend)
