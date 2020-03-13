@@ -24,18 +24,18 @@ The idea for the project came about through a mixture of activism and sustainabi
 
 ## Table of Contents
 
--   [API Overview](https://github.com/qusaifares/forfoodsake-backend#api-overview)
--   [Technologies Used](https://github.com/qusaifares/forfoodsake-backend#technologies-used)
--   [Response Requests Cycle Diagram](https://github.com/qusaifares/forfoodsake-backend#response-request-cycle-diagram)
--   [Database Model](https://github.com/qusaifares/forfoodsake-backend#database-model)
--   [Connection](https://github.com/qusaifares/forfoodsake-backend#connection)
--   [Testing](https://github.com/qusai/forfoodsake-backend#testing)
--   [Vendor Data Example](https://github.com/qusai/forfoodsake-backend#vendor-data-example)
--   [Code Samples](https://github.com/qusai/forfoodsake-backend#code-samples)
--   [Bugs & Fixes](https://github.com/qusai/forfoodsake-backend#bugs-&-fixes)
--   [Future Additions](https://github.com/qusai/forfoodsake-backend#future-additions)
--   [Contribution Guidelines](https://github.com/qusai/forfoodsake-backend#contribution-guidelines)
--   [Sources](https://github.com/qusai/forfoodsake-backend#sources)
+-   [API Overview](#api-overview)
+-   [Technologies Used](#technologies-used)
+-   [Response Requests Cycle Diagram](#response-request-cycle-diagram)
+-   [Database Model](#database-model)
+-   [Connection](#connection)
+-   [Testing](#testing)
+-   [Vendor Data Example](#vendor-data-example)
+-   [Code Samples](#code-samples)
+-   [Bugs & Fixes](#bugs-&-fixes)
+-   [Future Additions](#future-additions)
+-   [Contribution Guidelines](#contribution-guidelines)
+-   [Sources](#sources)
 
 ---
 
@@ -183,4 +183,4 @@ router.put('/:id/edit', async (req, res) => {
 
 **Additional documentation can be found in the Frontend Repository**
 
-[Click Here](https://github.com/mmarmol88/forfoodsake-frontend)
+[Click Here](https://forfoodsake.herokuapp.com/)
