@@ -24,18 +24,18 @@ The idea for the project came about through a mixture of activism and sustainabi
 
 ## Table of Contents
 
--   [API Overview](#api-overview)
--   [Technologies Used](#technologies-used)
--   [Response Requests Cycle Diagram](#response-request-cycle-diagram)
--   [Database Model](#database-model)
--   [Connection](#connection)
--   [Testing](#testing)
--   [Vendor Data Example](#vendor-data-example)
--   [Code Samples](#code-samples)
--   [Bugs & Fixes](#bugs-&-fixes)
--   [Future Additions](#future-additions)
--   [Contribution Guidelines](#contribution-guidelines)
--   [Sources](#sources)
+- [API Overview](#api-overview)
+- [Technologies Used](#technologies-used)
+- [Response Requests Cycle Diagram](#response-request-cycle-diagram)
+- [Database Model](#database-model)
+- [Connection](#connection)
+- [Testing](#testing)
+- [Vendor Data Example](#vendor-data-example)
+- [Code Samples](#code-samples)
+- [Bugs & Fixes](#bugs-&-fixes)
+- [Future Additions](#future-additions)
+- [Contribution Guidelines](#contribution-guidelines)
+- [Sources](#sources)
 
 ---
 
@@ -45,14 +45,14 @@ The API contains two models- Vendor and Listing. The Vendor model is made up of 
 
 ## Technologies used
 
--   [Node.js](https://nodejs.org/en/)
--   [Nodemon](https://nodemon.io/)
--   [Express](https://expressjs.com/)
--   [Sequelize](https://sequelize.org/master/)
--   [Postman](https://www.postman.com/)
--   [Cross-Origin Resource Sharing (CORS)](https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS)
--   [Bcrypt]()
--   [PostreSQL]()
+- [Node.js](https://nodejs.org/en/)
+- [Express](https://expressjs.com/)
+- [Cross-Origin Resource Sharing (CORS)](https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS)
+- [Bcrypt](https://www.npmjs.com/package/bcrypt)
+- [Sequelize](https://sequelize.org/master/)
+- [PostgreSQL](https://www.postgresql.org/)
+- [Nodemon](https://nodemon.io/)
+- [Postman](https://www.postman.com/)
 
 ## Response Request Cycle Diagram
 
@@ -64,45 +64,45 @@ The API contains two models- Vendor and Listing. The Vendor model is made up of 
 
 ## Testing
 
--   [Chai](https://www.chaijs.com/)
--   [Mocha](https://mochajs.org/)
--   [Supertest](https://www.npmjs.com/package/supertest)
+- [Chai](https://www.chaijs.com/)
+- [Mocha](https://mochajs.org/)
+- [Supertest](https://www.npmjs.com/package/supertest)
 
 ## Vendor Data Example
 
 ```yaml
 {
-    id: 1,
-    name: 'Dollys Donuts',
-    type: 'Restaurant',
-    phone: '1234567890',
-    email: 'dolly@do.nut',
-    password: '$2b$10$uHjWS3xW/R1D7llH43dt9OQNAkgWpFBwdkiMfl6/BMIaOEcBkjs2G',
-    closing_time: '12:00 AM',
-    street: '123',
-    city: 'New York City',
-    state: 'NY',
-    zip_code: '33211',
-    description: 'Local, family business that know how to fry & glaze puffy dough like no other.',
-    image: 'https://www.bakingbusiness.com/ext/resources/2019/8/08192019/GlobalTrends.jpg?1566494557',
-    createdAt: '2017-07-04T00:00:00.000Z',
-    updatedAt: '2020-03-09T16:22:27.115Z',
-    Listings:
-        [
-            {
-                id: 1,
-                name: 'Glazed Donut',
-                price: 1.59,
-                quantity: 20,
-                vegan: false,
-                vegetarian: true,
-                description: "Who doesn't love a classic. Soft yeast dough covered in an all natural glaze makes these donuts to die for.",
-                image: 'https://www.gosoftstuff.com/web/image/product.template/28091/image?unique=23e3a82',
-                createdAt: '2017-07-04T00:00:00.000Z',
-                updatedAt: '2020-03-09T16:22:27.215Z',
-                VendorId: 1,
-            },
-        ],
+  id: 1,
+  name: 'Dollys Donuts',
+  type: 'Restaurant',
+  phone: '1234567890',
+  email: 'dolly@do.nut',
+  password: '$2b$10$uHjWS3xW/R1D7llH43dt9OQNAkgWpFBwdkiMfl6/BMIaOEcBkjs2G',
+  closing_time: '12:00 AM',
+  street: '123',
+  city: 'New York City',
+  state: 'NY',
+  zip_code: '33211',
+  description: 'Local, family business that know how to fry & glaze puffy dough like no other.',
+  image: 'https://www.bakingbusiness.com/ext/resources/2019/8/08192019/GlobalTrends.jpg?1566494557',
+  createdAt: '2017-07-04T00:00:00.000Z',
+  updatedAt: '2020-03-09T16:22:27.115Z',
+  Listings:
+    [
+      {
+        id: 1,
+        name: 'Glazed Donut',
+        price: 1.59,
+        quantity: 20,
+        vegan: false,
+        vegetarian: true,
+        description: "Who doesn't love a classic. Soft yeast dough covered in an all natural glaze makes these donuts to die for.",
+        image: 'https://www.gosoftstuff.com/web/image/product.template/28091/image?unique=23e3a82',
+        createdAt: '2017-07-04T00:00:00.000Z',
+        updatedAt: '2020-03-09T16:22:27.215Z',
+        VendorId: 1,
+      },
+    ],
 }
 ```
 
@@ -112,14 +112,14 @@ Example of a GET request to view all vendors:
 
 ```javascript
 router.get('/', async (req, res) => {
-    try {
-        const vendors = await Vendor.findAll({
-            include: [Listing]
-        });
-        res.json(vendors);
-    } catch (err) {
-        console.error(err);
-    }
+  try {
+    const vendors = await Vendor.findAll({
+      include: [Listing]
+    });
+    res.json(vendors);
+  } catch (err) {
+    console.error(err);
+  }
 });
 ```
 
@@ -127,21 +127,21 @@ Example of a POST request to create a new vendor with password encryption:
 
 ```javascript
 router.post('/new', async (req, res) => {
-    // new vendor info
-    let vendorToCreate = req.body;
-    try {
-        // hashing password
-        const hashedPassword = await bcrypt.hash(req.body.password, 10);
-        // replacing password with hashed password
-        vendorToCreate.password = hashedPassword;
+  // new vendor info
+  let vendorToCreate = req.body;
+  try {
+    // hashing password
+    const hashedPassword = await bcrypt.hash(req.body.password, 10);
+    // replacing password with hashed password
+    vendorToCreate.password = hashedPassword;
 
-        const newVendor = await Vendor.create(vendorToCreate);
-        res.json(newVendor);
-    } catch {
-        res.status(500).send();
-    }
+    const newVendor = await Vendor.create(vendorToCreate);
+    res.json(newVendor);
+  } catch {
+    res.status(500).send();
+  }
 
-    // req.body should be the vendor object
+  // req.body should be the vendor object
 });
 ```
 
@@ -149,22 +149,22 @@ Example of a PUT request to update an existing vendor:
 
 ```javascript
 router.put('/:id/edit', async (req, res) => {
-    // req.body should look like this: { field: field being edited e.g.'email', value: 'new_email@gmail.com' }
-    const vendorToUpdate = await Vendor.findByPk(req.params.id);
-    vendorToUpdate[req.body.field] = req.body.value;
-    vendorToUpdate.save();
-    return res.json(vendorToUpdate);
+  // req.body should look like this: { field: field being edited e.g.'email', value: 'new_email@gmail.com' }
+  const vendorToUpdate = await Vendor.findByPk(req.params.id);
+  vendorToUpdate[req.body.field] = req.body.value;
+  vendorToUpdate.save();
+  return res.json(vendorToUpdate);
 });
 ```
 
 ## Bugs & Fixes
 
--   Trouble connecting front and back ends - moved CORS up above Express in the index.js to fix
--   'createdAt' & 'updatedAt' keys were rendering twice in the local host. The reason for this was because we were not seeding/migrating our data properly.
+- Trouble connecting front and back ends - moved CORS up above Express in the index.js to fix
+- 'createdAt' & 'updatedAt' keys were rendering twice in the local host. The reason for this was because we were not seeding/migrating our data properly.
 
 ## Future Additions
 
--   [ ] Image upload with Amazon Web Service(AWS)
+- [ ] Image upload with Amazon Web Service(AWS)
 
 ## Installation & Contributing Instructions
 
@@ -172,12 +172,12 @@ router.put('/:id/edit', async (req, res) => {
 
 ## Sources
 
--   [Seqelize Docs](https://sequelize.readthedocs.io/en/2.0/docs/)
--   [Express Docs](https://expressjs.com/en/api.html)
--   [General Assembly AWS Repository](https://git.generalassemb.ly/seir-129/aws-s3-setup-guide)
--   [Robin Wieruch Blog](https://www.robinwieruch.de/postgres-express-setup-tutorial)
--   [JD Tadlock Youtube Channel](https://www.youtube.com/watch?v=9xJLcTxlEIs)
--   [Traversy Media Youtube Channel](https://www.youtube.com/channel/UC29ju8bIPH5as8OGnQzwJyA)
+- [Seqelize Docs](https://sequelize.readthedocs.io/en/2.0/docs/)
+- [Express Docs](https://expressjs.com/en/api.html)
+- [General Assembly AWS Repository](https://git.generalassemb.ly/seir-129/aws-s3-setup-guide)
+- [Robin Wieruch Blog](https://www.robinwieruch.de/postgres-express-setup-tutorial)
+- [JD Tadlock Youtube Channel](https://www.youtube.com/watch?v=9xJLcTxlEIs)
+- [Traversy Media Youtube Channel](https://www.youtube.com/channel/UC29ju8bIPH5as8OGnQzwJyA)
 
 <hr>
 
