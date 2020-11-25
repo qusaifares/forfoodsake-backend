@@ -11,15 +11,19 @@ router.get('/', async (req, res) => {
     });
     res.json(vendors);
   } catch (err) {
-    res.send(err);
+    res.status(500).send(err);
   }
 });
 
 router.get('/:id', async (req, res) => {
-  const vendor = await Vendor.findByPk(req.params.id, {
-    include: [Listing],
-  });
-  return res.json(vendor);
+  try {
+    const vendor = await Vendor.findByPk(req.params.id, {
+      include: [Listing],
+    });
+    res.json(vendor);
+  } catch (error) {
+    res.status(500).send(error);
+  }
 });
 
 router.post('/new', async (req, res) => {
@@ -63,24 +67,32 @@ router.post('/login', async (req, res) => {
         res.statusMessage = 'Current password does not match';
         res.status(403).end();
       }
-    } catch {
-      res.status(500).send('Forbidden');
+    } catch (error) {
+      res.status(500).send(error);
     }
   }
 });
 
 router.put('/:id/edit', async (req, res) => {
-  const vendorToUpdate = await Vendor.update(req.body, {
-    where: { id: req.params.id },
-  });
-  return res.json(vendorToUpdate);
+  try {
+    const vendorToUpdate = await Vendor.update(req.body, {
+      where: { id: req.params.id },
+    });
+    return res.json(vendorToUpdate);
+  } catch (error) {
+    res.status(500).send(error);
+  }
 });
 
 router.delete('/:id/delete', async (req, res) => {
-  const vendorToDelete = await Vendor.findByPk(req.params.id);
-  await vendorToDelete.destroy();
-  res.statusMessage = 'Deleted vendor with id ' + req.params.id;
-  res.status(200).end();
+  try {
+    const vendorToDelete = await Vendor.findByPk(req.params.id);
+    await vendorToDelete.destroy();
+    res.statusMessage = `Deleted vendor with id ${req.params.id}`;
+    res.status(200).end();
+  } catch (error) {
+    res.status(500).send(error);
+  }
 });
 
 module.exports = router;
